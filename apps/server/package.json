@@ -1,0 +1,34 @@
+{
+  "name": "@playlist-dl/server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup src/index.ts --format esm --out-dir dist",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@fastify/static": "^7.0.4",
+    "@playlist-dl/shared": "*",
+    "archiver": "^7.0.1",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.27.0",
+    "node-html-parser": "^6.1.13",
+    "node-id3": "^0.2.9",
+    "p-limit": "^5.0.0",
+    "playwright": "^1.44.0",
+    "tsx": "^4.15.7",
+    "uuid": "^9.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.2",
+    "@types/node": "^22.0.0",
+    "@types/uuid": "^9.0.8",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5"
+  }
+}

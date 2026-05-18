@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+
+  font-family: 'Geist', system-ui, sans-serif;
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: #080808;
+  color: #e8e8e8;
+}
+
+/* Button press feedback */
+.btn-press {
+  transition: transform 160ms var(--ease-out), opacity 160ms var(--ease-out);
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
+.btn-press:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Input focus ring */
+.input-field {
+  transition: border-color 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
+}
+.input-field:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04), inset 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* Card entrance */
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-enter {
+  animation: card-in 280ms var(--ease-out) both;
+}
+
+/* Track row stagger */
+@keyframes row-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.row-enter {
+  animation: row-in 200ms var(--ease-out) both;
+}
+
+/* Status pill pulse */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.status-active {
+  animation: subtle-pulse 1.6s ease-in-out infinite;
+}
+
+/* Progress bar fill */
+.progress-fill {
+  transition: width 600ms var(--ease-spring);
+}
+
+/* Download button shimmer */
+@keyframes shimmer {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+.shimmer-inner {
+  animation: shimmer 2.4s ease-in-out infinite;
+}
+
+/* Quality option selection */
+.quality-option {
+  transition: border-color 150ms var(--ease-out), background-color 150ms var(--ease-out), transform 160ms var(--ease-out);
+}
+.quality-option:active {
+  transform: scale(0.98);
+}
