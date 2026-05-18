@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "${PORT:-4500}:4500"
+    env_file: .env
+    volumes:
+      - downloads:/tmp/downloads
+    restart: unless-stopped
+
+volumes:
+  downloads:

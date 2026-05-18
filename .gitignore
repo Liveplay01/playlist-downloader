@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+downloads/
+*.zip
+apps/client/dist/
+apps/server/dist/
+.DS_Store
+Thumbs.db
